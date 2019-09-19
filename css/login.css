@@ -1,0 +1,124 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Century Gothic;
+}
+
+header{
+  background-image: url("../img/bg2.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+ul{
+  float: right;
+  list-style: none;
+  margin-top: 25px;
+}
+
+ul li{
+  display: inline-block;
+}
+
+ul li a{
+  text-decoration: none;
+  color: white;
+  padding: 5px 20px;
+  border: 1px solid transparent;
+  transition: 0.6s ease;
+  cursor: pointer;
+}
+ul li a:hover{
+  background: white;
+  color: black;
+}
+
+ul li.active a{
+  background: white;
+  color: black;
+}
+
+.logo img{
+  float: left;
+  width: 150px;
+  height: auto;
+}
+
+.main{
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.title h1{
+  color: white;
+  font-size: 70px;
+}
+
+.login-box{
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.login-box h1{
+  float: left;
+  font-size: 40px;
+  border-bottom: 6px solid;
+  margin-bottom: 50px;
+  padding: 13px 0;
+
+}
+
+.textbox{
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid;
+}
+
+.textbox i{
+  width: 26px;
+  float: left;
+  text-align: center;
+}
+
+.textbox input{
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+}
+
+.btn{
+  text-decoration: none;
+  color: white;
+  padding: 10px 30px;
+  border: 1px solid white;
+  transition: 0.6s ease;
+  cursor: pointer;
+  background: transparent;
+}
+
+.btn:hover{
+  background: white;
+  color: black;
+}
