@@ -107,7 +107,6 @@ ul li.active a{
   font-size: 15px;
 }
 
-
 .img-container{
   position: relative;
   width: 200px;
@@ -120,45 +119,42 @@ ul li.active a{
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  filter: brightness(50%);
-}
-
-.heart{
-  position: absolute;
-  top: 15px;
-  right: 20px;
-}
-
-.heart::before{
-  font-family: fontawesome;
-  content: "\f004";
-  font-size: 28px;
-  color: #1bb76e;
+  filter: brightness(30%);
 }
 
 .content{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0 30px;
   text-align: center;
   color: #eef1f4;
+  width: 200px;
+  height: 300px;
 }
 
-.content p{
-  font-size: 15px;
-  margin-bottom: 10px;
+#info p {
+  font-size: 12px;
+  width: 70%;
+  float: right;
+}
+
+#titulo{
+    word-wrap: break-word;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: center;
 }
 
 .content span{
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 19px;
+  /*font-weight: bold;*/
   color: white;
+  text-align: center;
+
 }
 
-.icone, span i.icone{
-  font-size: 25px;
-  margin: 3px;
+div #info{
+  margin-top: 10px;
 }
 
 center{
@@ -170,4 +166,6 @@ center{
 .wrapper{
   margin: 10px;
   display: inline-block;
+  width: 200px;
+  height: 300px;
 }

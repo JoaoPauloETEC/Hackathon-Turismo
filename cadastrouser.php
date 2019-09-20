@@ -2,7 +2,7 @@
 <html lang="pt">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/cadastrouser.css">
     <title>Hackathon</title>
     <script src="https://kit.fontawesome.com/be184030a6.js"></script>
   </head>

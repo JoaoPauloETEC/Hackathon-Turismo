@@ -73,14 +73,34 @@
                 $codigo = $_GET['codigo'];
                 $nome = $_GET['nome'];
 
-                $sql = "SELECT nm_acessibilidade FROM tb_status s INNER JOIN tb_acessibilidade a ON s.id_acessibilidade = a.cd_acessibilidade WHERE S.id_hotel = $codigo";
+                $sql = "SELECT * FROM tb_hotel WHERE cd_hotel = $codigo";
 
                 $query = $mysqli->query($sql);
 
                 while($dados = $query->fetch_object()){
-                    $acessibilidade = $dados->nm_acessibilidade;
+                    $corredor = $dados->sg_corredor;
+                    $banho = $dados->sg_banho;
+                    $cozinha = $dados->sg_cozinha;
+                    $rampa = $dados->sg_hotelaria;
+                    $hotelaria = $dados->sg_hotelaria;
+                    $hospitalidade = $dados->sg_hospitalidade;
+                    $tecnologia = $dados->sg_tecnologia;
+                    $quarto = $dados->sg_quarto;
+                    $placa = $dados->sg_placa;
+                    $estacionamento = $dados->sg_estacionamento;
+                    $equipamento = $dados->sg_equipamento;
             ?>
-            <li><?php echo $acessibilidade; ?></li>
+                <?php if($corredor != 0){ echo "<li>".pegaAssunto($corredor)."</li>"; } ?>
+                <?php if($banho != 0){ echo "<li>".pegaAssunto($banho)."</li>"; } ?>
+                <?php if($cozinha != 0){ echo "<li>".pegaAssunto($cozinha)."</li>"; } ?>
+                <?php if($rampa != 0){ echo "<li>".pegaAssunto($rampa)."</li>"; } ?>
+                <?php if($hotelaria != 0){ echo "<li>".pegaAssunto($hotelaria)."</li>"; } ?>
+                <?php if($hospitalidade != 0){ echo "<li>".pegaAssunto($hospitalidade)."</li>"; } ?>
+                <?php if($tecnologia != 0){ echo "<li>".pegaAssunto($tecnologia)."</li>"; } ?>
+                <?php if($quarto != 0){ echo "<li>".pegaAssunto($quarto)."</li>"; } ?>
+                <?php if($placa != 0){ echo "<li>".pegaAssunto($placa)."</li>"; } ?>
+                <?php if($estacionamento != 0){ echo "<li>".pegaAssunto($estacionamento)."</li>"; } ?>
+                <?php if($equipamento != 0){ echo "<li>".pegaAssunto($equipamento)."</li>"; } ?>
             <?php
                 }
             ?>

@@ -1,5 +1,23 @@
 <?php
   include('conexao.php');
+
+  function pegaAssunto($assunto){
+      $array =[
+          '1' => 'Quartos acessíveis para cadeira de rodas',
+          '2' => 'Banheiro Acessível',
+          '3' => 'Equipamento de Acessibilidade para Deficientes Auditivos',
+          '4' => 'Estacionamento Acessível',
+          '5' => 'Placas em Braille ou Relevo',
+          '6' => 'Rampa',
+          '7' => 'Corredores com Acessibilidade',
+          '8' => 'Tecnologia Assistiva',
+          '9' => 'Hospitalidade Inclusiva',
+          '10' => 'Hotelaria Adaptada',
+          '11' => 'Cozinha Adequada',
+      ];
+
+      return $array[$assunto];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -59,7 +77,15 @@
                 $corredor = $dados->sg_corredor;
                 $banho = $dados->sg_banho;
                 $cozinha = $dados->sg_cozinha;
+                $rampa = $dados->sg_hotelaria;
                 $hotelaria = $dados->sg_hotelaria;
+                $hospitalidade = $dados->sg_hospitalidade;
+                $tecnologia = $dados->sg_tecnologia;
+                $quarto = $dados->sg_quarto;
+                $placa = $dados->sg_placa;
+                $estacionamento = $dados->sg_estacionamento;
+                $equipamento = $dados->sg_equipamento;
+
       ?>
         <div class="wrapper">
           <a href="hotel.php?codigo=<?php echo $codigo; ?>&nome=<?php echo $nome; ?>">
@@ -72,9 +98,67 @@
               <div class="content">
                 <span><?php echo $nome." - ".$cidade; ?></span>
                 <!-- <p id="nome" style="text-align: center;">Avaliado Estrelas</p> -->
-                <p id="nome" style="text-align: center;">Acessiblidade: </p>
+                <p id="nome" style="text-align: center;">Acessiblidade</p>
                 <div style="text-align: center;">
                 <!--  Acessibilidade -->
+                <?php
+                    if($corredor != 0){
+                ?>
+                    <span><i class="fab fa-accessible-icon icone"></i></span>
+                <?php 
+                  }
+                ?>
+
+                <!--  Banho -->
+                <?php
+                    if($banho != 0){
+                ?>
+                    <span><i class="fas fa-shower icone"></i></span>
+                <?php
+                    }
+                ?>
+
+                <!--  Cozinha -->
+                <?php
+                    if($cozinha != 0){
+                ?>
+                    <span><i class="material-icons icone">kitchen</i></span>
+                <?php
+                    }
+                ?>
+
+                <!--  Hotelaria -->
+                <?php
+                    if($hotelaria != 0){
+                ?>
+                    <div>
+                        <span><i class="fas fa-concierge-bell icone"></i></span>
+                    </div>
+                <?php
+                    }
+                ?>
+
+                <!--  Tecnologia Assistiva -->
+                <?php
+                    if($hotelaria != 0){
+                ?>
+                    <div>
+                        <span><i class="fas fa-microchip icone"></i></span>
+                    </div>
+                <?php
+                    }
+                ?>
+
+                <!--  Hospitalidade Inclusiva -->
+                <?php
+                    if($hotelaria != 0){
+                ?>
+                    <div>
+                        <span><i class="fas fa-clipboard-list icone"></i></span>
+                    </div>
+                <?php
+                    }
+                ?>
                 </div>
               </div>
             </div>
@@ -99,20 +183,85 @@
                   $codigo = $dados->cd_hotel;
                   $nome = $dados->nm_hotel;
                   $cidade = $dados->nm_cidade;
+                  $corredor = $dados->sg_corredor;
+                  $banho = $dados->sg_banho;
+                  $cozinha = $dados->sg_cozinha;
+                  $rampa = $dados->sg_hotelaria;
+                  $hotelaria = $dados->sg_hotelaria;
+                  $hospitalidade = $dados->sg_hospitalidade;
+                  $tecnologia = $dados->sg_tecnologia;
+                  $quarto = $dados->sg_quarto;
+                  $placa = $dados->sg_placa;
+                  $estacionamento = $dados->sg_estacionamento;
+                  $equipamento = $dados->sg_equipamento;
       ?>
         <div class="wrapper">
           <a href="hotel.php?codigo=<?php echo $codigo; ?>&nome=<?php echo $nome; ?>">
             <div class="img-container">
               <img src="img/card1.webp" alt="">
 
-              <div class="heart">
-              </div>
-
               <div class="content">
-                <span><?php echo $nome; ?></span>
+              <br><br>
+              <p id="titulo"><?php echo $nome." - ".$cidade; ?></p>
                 <!-- <p id="nome" style="text-align: center;">Avaliado 5 Estrelas</p> -->
-                <p id="nome" style="text-align: center;">Acessiblidade: </p>
+                <span id="nome" style="text-align: center;">Acessiblidade</span>
                 <div style="text-align: center;">
+                <!--  Acessibilidade -->
+                <?php
+                    if($corredor != 0){
+                ?>
+                     <div id="info">
+                       <span><i class="fab fa-accessible-icon icone"></i><p id="inf">Acessiblidade</p></span>
+                    </div>
+                <?php 
+                  }
+                ?>
+
+                <!--  Banho -->
+                <?php
+                    if($banho != 0){
+                ?>
+                    <div id="info">
+                      <span><i class="fas fa-shower icone"></i><p id="inf">Banheiro Acessivel</p></span>
+                    </div>
+                <?php
+                    }
+                ?>
+
+                
+
+                <!--  Hotelaria -->
+                <?php
+                    if($hotelaria != 0){
+                ?>
+                    <div id="info">
+                      <span><i class="fas fa-concierge-bell icone"></i><p id="inf">Hotelaria Adaptada</p></span>
+                    </div>
+                <?php
+                    }
+                ?>
+
+                <!--  Tecnologia Assistiva -->
+                <?php
+                    if($tecnologia != 0){
+                ?>
+                   <div id="info">
+                   <span><i class="fas fa-microchip icone"></i><p id="inf">Tecnologias Assistivas</p></span>
+                    </div>
+                <?php
+                    }
+                ?>
+
+                <!--  Hospitalidade Inclusiva -->
+                <?php
+                    if($hospitalidade != 0){
+                ?>
+                   <div id="info">
+                   <span><i class="fas fa-clipboard-list icone"></i><p id="inf">Hospitalidade Inclusiva</p></span>
+                    </div>
+                <?php
+                    }
+                ?>
                 </div>
               </div>
             </div>
